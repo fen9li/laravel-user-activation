@@ -1,0 +1,23 @@
+{
+    "name": "fen9li/laravel-user-activation",
+    "description": "Package for Laravel user account activation.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Feng Li",
+            "email": "lifcn@yahoo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fen9li\\LaravelUserActivation\\UserActivationServiceProvider"
+            ],
+            "aliases": {
+                "UserActivation": "Fen9li\\LaravelUserActivation\\Facade"
+            }
+        }
+    }
+}
