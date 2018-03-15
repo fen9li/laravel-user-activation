@@ -3,10 +3,10 @@
 namespace Fen9li\LaravelUserActivation\Traits;
 
 use Carbon\Carbon;
-use Illuminate\Auth\AuthManager;
-use Illuminate\Database\DatabaseManager;
-use Illuminate\Mail\Mailer;
-use Illuminate\Validation\Factory;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\User;
 use Fen9li\LaravelUserActivation\Mail\EmailToken;
