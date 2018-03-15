@@ -3,10 +3,10 @@
 namespace Fen9li\LaravelUserActivation\Traits;
 
 use Carbon\Carbon;
-use Auth;
-use DB;
-use Mail;
-use Validator;
+use Illuminate\Auth\AuthManager;
+use Illuminate\Database\DatabaseManager;
+use Illuminate\Mail\Mailer;
+use Illuminate\Validation\Factory;
 use Illuminate\Http\Request;
 use App\User;
 use Fen9li\LaravelUserActivation\Mail\EmailToken;
@@ -228,5 +228,7 @@ trait ActivatesUsers
     {
         Mail::to($user)->send(new EmailToken($user,$token));
     }
+
+    
 
 }

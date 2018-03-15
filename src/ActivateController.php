@@ -3,10 +3,11 @@
 namespace Fen9li\LaravelUserActivation;
 
 use Illuminate\Http\Request;
+use Illuminate\Session\SessionManager;
+
 use App\Http\Controllers\Controller;
 use App\User;
 use Fen9li\LaravelUserActivation\Traits\ActivatesUsers;
-use Session;
 
 class ActivateController extends Controller
 {
