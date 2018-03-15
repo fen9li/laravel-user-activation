@@ -1,6 +1,7 @@
 {
     "name": "fen9li/laravel-user-activation",
     "description": "Package for Laravel user account activation.",
+    "keywords": ["laravel", "user activation", "user verification", "email activation", "email verification"],
     "license": "MIT",
     "authors": [
         {
@@ -9,15 +10,27 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": ">=7.0.27",
+        "illuminate/support": "5.5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fen9li\\LaravelUserActivation\\": "src/"
+        }
+    },
+    "require-dev": {},
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "scripts": {
+    },
     "extra": {
         "laravel": {
             "providers": [
                 "Fen9li\\LaravelUserActivation\\UserActivationServiceProvider"
-            ],
-            "aliases": {
-                "UserActivation": "Fen9li\\LaravelUserActivation\\Facade"
-            }
+            ]
         }
     }
 }
