@@ -190,7 +190,11 @@ trait ActivatesUsers
                    ->where('email', $email)
                    ->first();
        if ($old !== null)
-          { $old -> delete(); }
+          { 
+            DB::table(config('voicelib.tables.user_activations'))
+                   ->where('email', $email)
+                   ->delete();
+          }
 
        // insert new record
        DB::table(config('voicelib.tables.user_activations'))

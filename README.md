@@ -186,6 +186,20 @@ $ sed -n '35,39p' app/Http/Controllers/Auth/LoginController.php
 $
 ```
 
+### Update 'app/Http/Controllers/Auth/ResetPasswordController.php'
+
+```
+$ sed -n '23,28p' app/Http/Controllers/Auth/ResetPasswordController.php
+    /**
+     * Where to redirect users after resetting their password.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/';
+$
+```
+
+
 ## USAGE
 
 ### Routes
