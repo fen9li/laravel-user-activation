@@ -30,7 +30,7 @@ return [
     */
 
     'uaemail' => [
-        'subject' => 'From voicelib.com: Your User Account Activation Link',
+        'subject' => env('UAEMAIL_SUBJECT'),
         'replyTo' => env('UAEMAIL_REPLY_TO'),
         'from' => env('UAEMAIL_FROM'),
     ],
