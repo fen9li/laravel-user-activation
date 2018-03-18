@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-use App\User;
+use voicelib\User;
 use Fen9li\LaravelUserActivation\Mail\EmailToken;
 
 // user verification Exceptions
