@@ -5,7 +5,7 @@ namespace Fen9li\LaravelUserActivation;
 use Illuminate\Http\Request;
 use Illuminate\Session\SessionManager;
 
-use App\Http\Controllers\Controller;
+use voicelib\Http\Controllers\Controller;
 use voicelib\User;
 use Fen9li\LaravelUserActivation\Traits\ActivatesUsers;
 
