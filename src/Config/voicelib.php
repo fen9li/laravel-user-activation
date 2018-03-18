@@ -31,7 +31,7 @@ return [
 
     'uaemail' => [
         'subject' => 'From voicelib.com: Your User Account Activation Link',
-        'replyTo' => 'arthur.f.li@gmail.com',
-        'from' => 'arthur.f.li@gmail.com',
+        'replyTo' => env('UAEMAIL_REPLY_TO'),
+        'from' => env('UAEMAIL_FROM'),
     ],
 ];
