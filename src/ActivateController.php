@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Session\SessionManager;
 
 use App\Http\Controllers\Controller;
-use App\User;
+use voicelib\User;
 use Fen9li\LaravelUserActivation\Traits\ActivatesUsers;
 
 class ActivateController extends Controller
