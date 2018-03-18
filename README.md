@@ -189,13 +189,30 @@ $
 ### Update 'app/Http/Controllers/Auth/ResetPasswordController.php'
 
 ```
-$ sed -n '23,28p' app/Http/Controllers/Auth/ResetPasswordController.php
+$ cat app/Http/Controllers/Auth/ResetPasswordController.php                                      
+<?php
+
+...
+use Illuminate\Support\Str;
+
+class ResetPasswordController extends Controller
+{
+...
     /**
      * Where to redirect users after resetting their password.
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/login';
+...
+    protected function resetPassword($user, $password)
+    {
+        $user->forceFill([
+            'password' => bcrypt($password),
+            'remember_token' => Str::random(60),
+        ])->save();
+    }
+}
 $
 ```
 
