@@ -3,7 +3,7 @@
 namespace Fen9li\LaravelUserActivation\Middleware;
 
 use Closure;
-use App\User;
+use voicelib\User;
 use Fen9li\LaravelUserActivation\Exceptions\UserNotFoundException;
 
 class CheckActivation
