@@ -17,7 +17,9 @@ class UserActivationServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/Migrations');
         $this->loadRoutesFrom(__DIR__.'/routes.php');
         $this->loadViewsFrom(__DIR__.'/Views','laravel-user-activation');
-
+        $this->publishes([
+            __DIR__ . '/Config' => config_path('userActivation'),
+        ]);
     }
 
     /**
@@ -29,6 +31,6 @@ class UserActivationServiceProvider extends ServiceProvider
     {
         //
         $this->app->make('Fen9li\LaravelUserActivation\ActivateController');
-        $this->mergeConfigFrom(__DIR__.'/Config/userActivation.php', 'userActivation' );
+//        $this->mergeConfigFrom(__DIR__.'/Config/userActivation.php', 'userActivation' );
     }
 }
