@@ -45,7 +45,7 @@ trait ActivatesUsers
             $this->markUserActivated($user);
             $this->clearToken($savedToken);
             $this->guard()->login($user, 'true');
-            return redirect(config('voicelib.redirects.redirectToAfterActivation'));
+            return redirect(config('userActivation.redirects.redirectToAfterActivation'));
         } else {
             throw new ActivationLinkBrokenException();
         }
@@ -59,7 +59,7 @@ trait ActivatesUsers
      */
     protected function clearToken($token)
     {
-        DB::table(config('voicelib.tables.user_activations'))
+        DB::table(config('userActivation.tables.user_activations'))
             ->where('token', $token)
             ->delete();
     }
@@ -97,12 +97,12 @@ trait ActivatesUsers
      */
     protected function getSavedTokenByEmail($email)
     {
-        $token = DB::table(config('voicelib.tables.user_activations'))
+        $token = DB::table(config('userActivation.tables.user_activations'))
                  ->where('email', $email)
                  ->first(['token']);
         if ($token === null) {
             // clear broken record in database table
-               DB::table(config('voicelib.tables.user_activations'))
+               DB::table(config('userActivation.tables.user_activations'))
                    ->where('email', $email)
                    ->delete();
             //
@@ -186,18 +186,18 @@ trait ActivatesUsers
     protected function updateToken($email,$token)
     {
        // delete old record if exists
-       $old = DB::table(config('voicelib.tables.user_activations'))
+       $old = DB::table(config('userActivation.tables.user_activations'))
                    ->where('email', $email)
                    ->first();
        if ($old !== null)
           { 
-            DB::table(config('voicelib.tables.user_activations'))
+            DB::table(config('userActivation.tables.user_activations'))
                    ->where('email', $email)
                    ->delete();
           }
 
        // insert new record
-       DB::table(config('voicelib.tables.user_activations'))
+       DB::table(config('userActivation.tables.user_activations'))
             ->insert([
                 'email' => $email,
                 'token' => $token,
@@ -213,7 +213,7 @@ trait ActivatesUsers
      */
     protected function saveToken($email,$token)
     {
-        DB::table(config('voicelib.tables.user_activations'))
+        DB::table(config('userActivation.tables.user_activations'))
             ->insert([
                 'email' => $email,
                 'token' => $token,
@@ -232,7 +232,4 @@ trait ActivatesUsers
     {
         Mail::to($user)->send(new EmailToken($user,$token));
     }
-
-    
-
 }

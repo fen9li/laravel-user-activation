@@ -29,6 +29,6 @@ class UserActivationServiceProvider extends ServiceProvider
     {
         //
         $this->app->make('Fen9li\LaravelUserActivation\ActivateController');
-        $this->mergeConfigFrom(__DIR__.'/Config/voicelib.php', 'voicelib' );
+        $this->mergeConfigFrom(__DIR__.'/Config/userActivation.php', 'userActivation' );
     }
 }

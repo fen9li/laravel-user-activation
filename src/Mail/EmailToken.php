@@ -34,9 +34,9 @@ class EmailToken extends Mailable
      */
     public function build()
     {
-        return $this->subject(config('voicelib.uaemail.subject'))
-                    ->from(config('voicelib.uaemail.from'))
-                    ->replyTo(config('voicelib.uaemail.replyTo'))
+        return $this->subject(config('userActivation.uaemail.subject'))
+                    ->from(config('userActivation.uaemail.from'))
+                    ->replyTo(config('userActivation.uaemail.replyTo'))
                     ->view('laravel-user-activation::email')
                     ->with([
                             'email'=>$this->user->email,
