@@ -18,7 +18,7 @@ class UserActivationServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes.php');
         $this->loadViewsFrom(__DIR__.'/Views','laravel-user-activation');
         $this->publishes([
-            __DIR__ . '/Config/userActivation.php' => config_path('userActivation'),],'config');
+            __DIR__ . '/Config/userActivation.php' => config_path('userActivation.php'),],'config');
     }
 
     /**
