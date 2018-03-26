@@ -1,8 +1,8 @@
 **fen9li/laravel-user-activation** is a PHP package built for Laravel 5.5 to easily handle a user / email activation.
 
 ## VERSIONS
-
-**This package has been tested with Laravel 5.5.28 successfully.**
+**Release 1.0.0**
+**This package has been tested with Laravel 5.5.x successfully.**
 
 ## ABOUT
 
