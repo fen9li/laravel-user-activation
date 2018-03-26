@@ -9,7 +9,7 @@
             "email": "lifcn@yahoo.com"
         }
     ],
-    "minimum-stability": "1.0.0",
+    "minimum-stability": "RC",
     "prefer-stable": true,
     "require": {
         "php": ">=7.0.27",
